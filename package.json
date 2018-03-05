@@ -1,0 +1,23 @@
+{
+  "name": "easing-function-to-coordinate-set",
+  "version": "1.0.0",
+  "description": "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsenwork/easing-function-to-coordinate-set.git"
+  },
+  "keywords": [
+    "easing-functions",
+    "javascript"
+  ],
+  "author": "Andreas Larsen <andreas@larsenwork.com> (https://larsenwork.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larsenwork/easing-function-to-coordinate-set/issues"
+  },
+  "homepage": "https://github.com/larsenwork/easing-function-to-coordinate-set#readme"
+}

@@ -1,1 +1,1 @@
-declare module 'hypot';
+declare module 'hypot'

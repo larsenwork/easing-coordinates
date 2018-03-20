@@ -17,7 +17,7 @@ const cubicTest = [
     { x: 0.738, y: 0.8823204807 },
     { x: 0.815, y: 0.9456314885 },
     { x: 0.906, y: 0.9871537401 },
-    { x: 1, y: 1 }
+    { x: 1, y: 1 },
 ];
 const cubicTest2 = [
     { x: 0, y: 0 },
@@ -47,7 +47,7 @@ const cubicTest2 = [
     { x: 0.886, y: 1.1784636542 },
     { x: 0.93, y: 1.1209825808 },
     { x: 0.968, y: 1.0599610373 },
-    { x: 1, y: 1 }
+    { x: 1, y: 1 },
 ];
 const easeTest = [
     { x: 0, y: 0 },
@@ -65,7 +65,7 @@ const easeTest = [
     { x: 0.711, y: 0.9455150493 },
     { x: 0.806, y: 0.9771659923 },
     { x: 0.905, y: 0.9948875961 },
-    { x: 1, y: 1 }
+    { x: 1, y: 1 },
 ];
 const easeTestHypot = [
     { x: 0, y: 0 },
@@ -76,7 +76,7 @@ const easeTestHypot = [
     { x: 0.499, y: 0.801407407 },
     { x: 0.65, y: 0.9159338488 },
     { x: 0.828, y: 0.9823328575 },
-    { x: 1, y: 1 }
+    { x: 1, y: 1 },
 ];
 const stepTestEnd = [
     { x: 0, y: 0 },
@@ -86,7 +86,7 @@ const stepTestEnd = [
     { x: 0.5, y: 0.5 },
     { x: 0.75, y: 0.5 },
     { x: 0.75, y: 0.75 },
-    { x: 1, y: 0.75 }
+    { x: 1, y: 0.75 },
 ];
 const stepTestNone = [
     { x: 0, y: 0 },
@@ -96,7 +96,7 @@ const stepTestNone = [
     { x: 0.5, y: 0.6666666667 },
     { x: 0.75, y: 0.6666666667 },
     { x: 0.75, y: 1 },
-    { x: 1, y: 1 }
+    { x: 1, y: 1 },
 ];
 const stepTestBoth = [
     { x: 0, y: 0.2 },
@@ -106,7 +106,7 @@ const stepTestBoth = [
     { x: 0.5, y: 0.6 },
     { x: 0.75, y: 0.6 },
     { x: 0.75, y: 0.8 },
-    { x: 1, y: 0.8 }
+    { x: 1, y: 0.8 },
 ];
 /*
  * Test that we correct output when giving valid input

@@ -8,14 +8,14 @@ export function cubicCoordinates(
   y2: number,
   hypotSize = 0.1,
   incrementSize = 0.001
-): shared.coordinate[] {
+): shared.ICoordinate[] {
   const bezier = BezierEasing(x1, y1, x2, y2)
   let x = 0
   let y = 0
   let xOld = 0
   let yOld = 0
   let firstTime = true
-  let coordinates: shared.coordinate[] = []
+  let coordinates: shared.ICoordinate[] = []
 
   // After first time test if distance from last coordinate added in inner loop (xOld, yOld) to (1, 1) is within 90% of average distance between coordinates
   while (firstTime || Math.hypot(1 - xOld, 1 - yOld) < hypotSize * 0.9) {

@@ -1,4 +1,4 @@
-import { easingCoordinates, cubicCoordinates, stepsCoordinates } from './index'
+import { cubicCoordinates, easingCoordinates, stepsCoordinates } from './index'
 
 const cubicTest = [
   { x: 0, y: 0 },
@@ -16,7 +16,7 @@ const cubicTest = [
   { x: 0.738, y: 0.8823204807 },
   { x: 0.815, y: 0.9456314885 },
   { x: 0.906, y: 0.9871537401 },
-  { x: 1, y: 1 }
+  { x: 1, y: 1 },
 ]
 
 const cubicTest2 = [
@@ -47,7 +47,7 @@ const cubicTest2 = [
   { x: 0.886, y: 1.1784636542 },
   { x: 0.93, y: 1.1209825808 },
   { x: 0.968, y: 1.0599610373 },
-  { x: 1, y: 1 }
+  { x: 1, y: 1 },
 ]
 
 const easeTest = [
@@ -66,7 +66,7 @@ const easeTest = [
   { x: 0.711, y: 0.9455150493 },
   { x: 0.806, y: 0.9771659923 },
   { x: 0.905, y: 0.9948875961 },
-  { x: 1, y: 1 }
+  { x: 1, y: 1 },
 ]
 
 const easeTestHypot = [
@@ -78,7 +78,7 @@ const easeTestHypot = [
   { x: 0.499, y: 0.801407407 },
   { x: 0.65, y: 0.9159338488 },
   { x: 0.828, y: 0.9823328575 },
-  { x: 1, y: 1 }
+  { x: 1, y: 1 },
 ]
 
 const stepTestEnd = [
@@ -89,7 +89,7 @@ const stepTestEnd = [
   { x: 0.5, y: 0.5 },
   { x: 0.75, y: 0.5 },
   { x: 0.75, y: 0.75 },
-  { x: 1, y: 0.75 }
+  { x: 1, y: 0.75 },
 ]
 
 const stepTestNone = [
@@ -100,7 +100,7 @@ const stepTestNone = [
   { x: 0.5, y: 0.6666666667 },
   { x: 0.75, y: 0.6666666667 },
   { x: 0.75, y: 1 },
-  { x: 1, y: 1 }
+  { x: 1, y: 1 },
 ]
 
 const stepTestBoth = [
@@ -111,7 +111,7 @@ const stepTestBoth = [
   { x: 0.5, y: 0.6 },
   { x: 0.75, y: 0.6 },
   { x: 0.75, y: 0.8 },
-  { x: 1, y: 0.8 }
+  { x: 1, y: 0.8 },
 ]
 
 /*
@@ -119,18 +119,20 @@ const stepTestBoth = [
 */
 test('coordinates for "cubic-bezier(0.5, 0, 0.5, 1)"', () => {
   expect(easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(cubicTest)
-});
+})
 
 test('coordinates for "cubic-bezier(0, 0, 0.5, 2)"', () => {
   expect(easingCoordinates('cubic-bezier(0, 0, 0.5, 2)')).toEqual(cubicTest2)
-});
+})
 
 test('coordinates for "ease"', () => {
   expect(easingCoordinates('ease')).toEqual(easeTest)
 })
 
 test('ease shorthand is the same as equivalent cubic-bezier', () => {
-  expect(easingCoordinates('ease-in-out')).toEqual(easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)'))
+  expect(easingCoordinates('ease-in-out')).toEqual(
+    easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')
+  )
 })
 
 test('coordinates for "ease" with a bigger hypotSize shoul be fewer and further appart', () => {
@@ -138,11 +140,15 @@ test('coordinates for "ease" with a bigger hypotSize shoul be fewer and further 
 })
 
 test('easingCoordinates returns the same as cubicCoordinates', () => {
-  expect(easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')).toEqual(cubicCoordinates(0.42, 0, 0.58, 1))
+  expect(easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')).toEqual(
+    cubicCoordinates(0.42, 0, 0.58, 1)
+  )
 })
 
 test('easingCoordinates returns the same as stepsCoordinates', () => {
-  expect(easingCoordinates('steps(4, skip-end)')).toEqual(stepsCoordinates(4, 'skip-end'))
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
+    stepsCoordinates(4, 'skip-end')
+  )
 })
 
 test('coordinates for "steps(4, skip-end)"', () => {
@@ -153,7 +159,6 @@ test('coordinates for "steps(4)" - the default is "skip-end" as per spec', () =>
   expect(easingCoordinates('steps(4)')).toEqual(stepTestEnd)
 })
 
-
 test('coordinates for "steps(4, skip-none)"', () => {
   expect(easingCoordinates('steps(4, skip-none)')).toEqual(stepTestNone)
 })
@@ -163,8 +168,12 @@ test('coordinates for "steps(4, skip-both)"', () => {
 })
 
 test('old and new steps syntax should yield the same', () => {
-  expect(easingCoordinates('steps(4, skip-end)')).toEqual(easingCoordinates('steps(4, end)'))
-  expect(easingCoordinates('steps(2, skip-start)')).toEqual(easingCoordinates('steps(2, start)'))
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
+    easingCoordinates('steps(4, end)')
+  )
+  expect(easingCoordinates('steps(2, skip-start)')).toEqual(
+    easingCoordinates('steps(2, start)')
+  )
 })
 
 /*

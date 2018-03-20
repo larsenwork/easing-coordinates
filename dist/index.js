@@ -2,15 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const cubic_coordinates_1 = require("./lib/cubic-coordinates");
 exports.cubicCoordinates = cubic_coordinates_1.cubicCoordinates;
-const steps_coordinates_1 = require("./lib/steps-coordinates");
-exports.stepsCoordinates = steps_coordinates_1.stepsCoordinates;
 const easing_map_1 = require("./lib/easing-map");
 const shared = require("./lib/shared");
+const steps_coordinates_1 = require("./lib/steps-coordinates");
+exports.stepsCoordinates = steps_coordinates_1.stepsCoordinates;
 function easingCoordinates(easingFunction, hypotSize, incrementSize) {
     const errorMsgStart = `Error parsing "${easingFunction}".`;
     // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
-    if (easing_map_1.default[easingFunction])
+    if (easing_map_1.default[easingFunction]) {
         easingFunction = easing_map_1.default[easingFunction];
+    }
     // If we think it's a steps function
     if (easingFunction.includes('steps(')) {
         const args = shared.getFunctionArguments(easingFunction);
@@ -36,7 +37,7 @@ function easingCoordinates(easingFunction, hypotSize, incrementSize) {
             throw new Error(`${errorMsgStart} Got ${args.length} arguments but expected 4.`);
         }
         else {
-            [x1, y1, x2, y2].forEach(arg => {
+            args.forEach(arg => {
                 if (typeof arg !== 'number') {
                     throw new Error(`${errorMsgStart} "${arg}" is not a number.`);
                 }

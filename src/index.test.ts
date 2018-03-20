@@ -38,7 +38,7 @@ const easeTest = [
   { x: 1, y: 1 }
 ]
 
-const skipTest = [
+const stepTest = [
   { x: 0, y: 0 },
   { x: 0.25, y: 0 },
   { x: 0.25, y: 0.25 },
@@ -65,7 +65,7 @@ test('ease shorthand is the same as equivalent cubic-bezier', () => {
 })
 
 test('coordinates for "steps(4, skip-end)"', () => {
-  expect(easingCoordinate('steps(4, skip-end)')).toEqual(skipTest)
+  expect(easingCoordinate('steps(4, skip-end)')).toEqual(stepTest)
 })
 
 /*

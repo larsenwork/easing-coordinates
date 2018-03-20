@@ -23,7 +23,7 @@ function getEasingCoordinates(easingFunction) {
                 throw new Error(`${errorMsgStart} "${args[0]}" is not a number.`);
             }
             else if (typeof args[1] !== 'string') {
-                throw new Error(`${errorMsgStart} "${args[1]}" is not a number.`);
+                throw new Error(`${errorMsgStart} "${args[1]}" is not a string.`);
             }
             return get_steps_coordinates_1.default(stepCount, stepSkip);
         }

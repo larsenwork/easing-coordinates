@@ -69,7 +69,7 @@ const easeTest = [
   { x: 1, y: 1 }
 ]
 
-const stepTest = [
+const stepTestEnd = [
   { x: 0, y: 0 },
   { x: 0.25, y: 0 },
   { x: 0.25, y: 0.25 },
@@ -78,6 +78,28 @@ const stepTest = [
   { x: 0.75, y: 0.5 },
   { x: 0.75, y: 0.75 },
   { x: 1, y: 0.75 }
+]
+
+const stepTestNone = [
+  { x: 0, y: 0 },
+  { x: 0.25, y: 0 },
+  { x: 0.25, y: 0.3333333333 },
+  { x: 0.5, y: 0.3333333333 },
+  { x: 0.5, y: 0.6666666667 },
+  { x: 0.75, y: 0.6666666667 },
+  { x: 0.75, y: 1 },
+  { x: 1, y: 1 }
+]
+
+const stepTestBoth = [
+  { x: 0, y: 0.2 },
+  { x: 0.25, y: 0.2 },
+  { x: 0.25, y: 0.4 },
+  { x: 0.5, y: 0.4 },
+  { x: 0.5, y: 0.6 },
+  { x: 0.75, y: 0.6 },
+  { x: 0.75, y: 0.8 },
+  { x: 1, y: 0.8 }
 ]
 
 /*
@@ -100,7 +122,20 @@ test('ease shorthand is the same as equivalent cubic-bezier', () => {
 })
 
 test('coordinates for "steps(4, skip-end)"', () => {
-  expect(easingCoordinate('steps(4, skip-end)')).toEqual(stepTest)
+  expect(easingCoordinate('steps(4, skip-end)')).toEqual(stepTestEnd)
+})
+
+test('coordinates for "steps(4, skip-none)"', () => {
+  expect(easingCoordinate('steps(4, skip-none)')).toEqual(stepTestNone)
+})
+
+test('coordinates for "steps(4, skip-both)"', () => {
+  expect(easingCoordinate('steps(4, skip-both)')).toEqual(stepTestBoth)
+})
+
+test('old and new steps syntax should yield the same', () => {
+  expect(easingCoordinate('steps(4, skip-end)')).toEqual(easingCoordinate('steps(4, end)'))
+  expect(easingCoordinate('steps(2, skip-start)')).toEqual(easingCoordinate('steps(2, start)'))
 })
 
 /*
@@ -120,9 +155,23 @@ test('too many input in steps should throw an error', () => {
   expect(incorrectInput).toThrowError()
 })
 
-test('incorrect order in steps should throw an error', () => {
+test('steps without a number first should throw an error', () => {
   function incorrectInput() {
     easingCoordinate('steps(skip-end, 4)')
+  }
+  expect(incorrectInput).toThrowError()
+})
+
+test('steps without a string last should throw an error', () => {
+  function incorrectInput() {
+    easingCoordinate('steps(4, 4)')
+  }
+  expect(incorrectInput).toThrowError()
+})
+
+test('incorrect steps skips instructions should throw an error', () => {
+  function incorrectInput() {
+    easingCoordinate('steps(4, skip-forward)')
   }
   expect(incorrectInput).toThrowError()
 })
@@ -143,7 +192,7 @@ test('too many input in cubic should throw an error', () => {
 
 test('non number input in cubic should throw an error', () => {
   function incorrectInput() {
-    easingCoordinate('cubic-bezier(0.5, hello, 0.5, 1, 1)')
+    easingCoordinate('cubic-bezier(0.5, hello, 0.5, 1)')
   }
   expect(incorrectInput).toThrowError()
 })

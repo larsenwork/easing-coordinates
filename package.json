@@ -1,5 +1,5 @@
 {
-  "name": "easing-function-to-coordinate-set",
+  "name": "get-easing-coordinates",
   "version": "1.0.0",
   "description": "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
   "main": "dist/index.js",
@@ -28,7 +28,7 @@
     "bezier-easing": "^2.0.3",
     "hypot": "^1.0.1"
   },
-  "homepage": "https://github.com/larsenwork/easing-function-to-coordinate-set#readme",
+  "homepage": "https://larsenwork.com/easing-gradients/",
   "devDependencies": {
     "@types/jest": "^22.2.0",
     "eslint": "^4.18.2",

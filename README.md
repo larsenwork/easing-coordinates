@@ -21,4 +21,5 @@
   </a>
 </p>
 
-Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.
+Utility script that takes an easing function as input and outputs a coordinate
+set with adjustable precision/resolution.

@@ -2,6 +2,7 @@ const getParenthesisContent = (str: string) => {
   return str
     .slice(str.indexOf('(') + 1, str.lastIndexOf(')')).split(',')
     .map(item => item.trim())
+    .filter(item => item !== '')
 }
 const convertToNumberMaybe = (str: string): any => Number.isNaN(Number(str)) ? str : Number(str)
 

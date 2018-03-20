@@ -15,14 +15,14 @@ function getEasingCoordinates(easingFunction) {
     if (easingFunction.includes('steps(')) {
         const args = shared.getFunctionArguments(easingFunction);
         const [stepCount, stepSkip] = args;
-        if (args.length !== 2) {
-            throw new Error(`${errorMsgStart} Could only find ${args.length} arguments but expected 4.`);
+        if (args.length < 1 || args.length > 2) {
+            throw new Error(`${errorMsgStart} Got ${args.length} arguments but expected 1 or 2.`);
         }
         else {
             if (typeof args[0] !== 'number') {
                 throw new Error(`${errorMsgStart} "${args[0]}" is not a number.`);
             }
-            else if (typeof args[1] !== 'string') {
+            else if (args.length === 2 && typeof args[1] !== 'string') {
                 throw new Error(`${errorMsgStart} "${args[1]}" is not a string.`);
             }
             return get_steps_coordinates_1.default(stepCount, stepSkip);
@@ -33,7 +33,7 @@ function getEasingCoordinates(easingFunction) {
         const args = shared.getFunctionArguments(easingFunction);
         const [x1, y1, x2, y2] = args;
         if (args.length !== 4) {
-            throw new Error(`${errorMsgStart} Found ${args.length} arguments but expected 4.`);
+            throw new Error(`${errorMsgStart} Got ${args.length} arguments but expected 4.`);
         }
         else {
             [x1, y1, x2, y2].forEach(arg => {

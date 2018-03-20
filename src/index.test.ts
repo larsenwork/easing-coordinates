@@ -125,6 +125,11 @@ test('coordinates for "steps(4, skip-end)"', () => {
   expect(easingCoordinate('steps(4, skip-end)')).toEqual(stepTestEnd)
 })
 
+test('coordinates for "steps(4)" - the default is "skip-end" as per spec', () => {
+  expect(easingCoordinate('steps(4)')).toEqual(stepTestEnd)
+})
+
+
 test('coordinates for "steps(4, skip-none)"', () => {
   expect(easingCoordinate('steps(4, skip-none)')).toEqual(stepTestNone)
 })
@@ -143,7 +148,7 @@ test('old and new steps syntax should yield the same', () => {
  */
 test('too few input in steps should throw an error', () => {
   function incorrectInput() {
-    easingCoordinate('steps(4)')
+    easingCoordinate('steps()')
   }
   expect(incorrectInput).toThrowError()
 })

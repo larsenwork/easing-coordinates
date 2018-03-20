@@ -115,6 +115,9 @@ test('ease shorthand is the same as equivalent cubic-bezier', () => {
 test('coordinates for "steps(4, skip-end)"', () => {
     expect(index_1.default('steps(4, skip-end)')).toEqual(stepTestEnd);
 });
+test('coordinates for "steps(4)" - the default is "skip-end" as per spec', () => {
+    expect(index_1.default('steps(4)')).toEqual(stepTestEnd);
+});
 test('coordinates for "steps(4, skip-none)"', () => {
     expect(index_1.default('steps(4, skip-none)')).toEqual(stepTestNone);
 });
@@ -130,7 +133,7 @@ test('old and new steps syntax should yield the same', () => {
  */
 test('too few input in steps should throw an error', () => {
     function incorrectInput() {
-        index_1.default('steps(4)');
+        index_1.default('steps()');
     }
     expect(incorrectInput).toThrowError();
 });

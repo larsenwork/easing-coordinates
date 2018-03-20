@@ -1,9 +1,9 @@
-import getCubicCoordinates from './lib/get-cubic-coordinates'
-import getStepsCoordinates from './lib/get-steps-coordinates'
+import { cubicCoordinates } from './lib/cubic-coordinates'
+import { stepsCoordinates } from './lib/steps-coordinates'
 import easingShorthandMap from './lib/easing-map'
 import * as shared from './lib/shared'
 
-function getEasingCoordinates(
+function easingCoordinates(
   easingFunction: string,
   hypotSize?: number,
   incrementSize?: number
@@ -25,7 +25,7 @@ function getEasingCoordinates(
       } else if (args.length === 2 && typeof args[1] !== 'string') {
         throw new Error(`${errorMsgStart} "${args[1]}" is not a string.`)
       }
-      return getStepsCoordinates(stepCount, stepSkip)
+      return stepsCoordinates(stepCount, stepSkip)
     }
 
     // If we think it's a cubic-bezier function
@@ -40,7 +40,7 @@ function getEasingCoordinates(
           throw new Error(`${errorMsgStart} "${arg}" is not a number.`)
         }
       })
-      return getCubicCoordinates(x1, y1, x2, y2, hypotSize, incrementSize)
+      return cubicCoordinates(x1, y1, x2, y2, hypotSize, incrementSize)
     }
 
     // If it's not cubic bezier or steps it's not an easing function
@@ -50,8 +50,8 @@ function getEasingCoordinates(
 }
 
 export {
-  getStepsCoordinates,
-  getCubicCoordinates,
-  getEasingCoordinates,
-  getEasingCoordinates as default
+  stepsCoordinates,
+  cubicCoordinates,
+  easingCoordinates,
+  easingCoordinates as default
 }

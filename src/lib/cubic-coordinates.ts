@@ -1,7 +1,7 @@
 import * as BezierEasing from 'bezier-easing'
 import * as shared from './shared'
 
-export default function (
+export function cubicCoordinates(
   x1: number,
   y1: number,
   x2: number,

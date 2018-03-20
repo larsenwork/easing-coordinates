@@ -1,5 +1,5 @@
-import getCubicCoordinates from './lib/get-cubic-coordinates';
-import getStepsCoordinates from './lib/get-steps-coordinates';
+import { cubicCoordinates } from './lib/cubic-coordinates';
+import { stepsCoordinates } from './lib/steps-coordinates';
 import * as shared from './lib/shared';
-declare function getEasingCoordinates(easingFunction: string): shared.coordinate[];
-export { getStepsCoordinates, getCubicCoordinates, getEasingCoordinates as default };
+declare function easingCoordinates(easingFunction: string, hypotSize?: number, incrementSize?: number): shared.coordinate[];
+export { stepsCoordinates, cubicCoordinates, easingCoordinates, easingCoordinates as default };

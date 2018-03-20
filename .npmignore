@@ -1,0 +1,6 @@
+# Dev settings files
+/.vscode
+.prettierrc.json
+jest.config.js
+tsconfig.json
+tslint.json

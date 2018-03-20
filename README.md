@@ -1,4 +1,4 @@
-# Easing Coordinates
+<h1 align="center">Easing Coordinates</h1>
 
 <p align="center">
   <a href="https://travis-ci.org/larsenwork/easing-coordinates">

@@ -19,6 +19,36 @@ const cubicTest = [
     { x: 0.906, y: 0.9871537401 },
     { x: 1, y: 1 }
 ];
+const cubicTest2 = [
+    { x: 0, y: 0 },
+    { x: 0.019, y: 0.0714655527 },
+    { x: 0.039, y: 0.1423025476 },
+    { x: 0.06, y: 0.2132789027 },
+    { x: 0.081, y: 0.2812839337 },
+    { x: 0.103, y: 0.3496467348 },
+    { x: 0.126, y: 0.418180504 },
+    { x: 0.15, y: 0.4866577856 },
+    { x: 0.175, y: 0.5548197244 },
+    { x: 0.201, y: 0.6223801845 },
+    { x: 0.228, y: 0.6890273721 },
+    { x: 0.256, y: 0.7544240594 },
+    { x: 0.286, y: 0.8203349833 },
+    { x: 0.318, y: 0.8859282955 },
+    { x: 0.352, y: 0.9502996909 },
+    { x: 0.388, y: 1.0124633405 },
+    { x: 0.427, y: 1.0727964422 },
+    { x: 0.47, y: 1.1307595908 },
+    { x: 0.518, y: 1.1846659862 },
+    { x: 0.572, y: 1.2313501976 },
+    { x: 0.634, y: 1.2660961482 },
+    { x: 0.704, y: 1.28 },
+    { x: 0.774, y: 1.2655211495 },
+    { x: 0.835, y: 1.2282931395 },
+    { x: 0.886, y: 1.1784636542 },
+    { x: 0.93, y: 1.1209825808 },
+    { x: 0.968, y: 1.0599610373 },
+    { x: 1, y: 1 }
+];
 const easeTest = [
     { x: 0, y: 0 },
     { x: 0.078, y: 0.0638426248 },
@@ -37,7 +67,7 @@ const easeTest = [
     { x: 0.905, y: 0.9948875961 },
     { x: 1, y: 1 }
 ];
-const skipTest = [
+const stepTest = [
     { x: 0, y: 0 },
     { x: 0.25, y: 0 },
     { x: 0.25, y: 0.25 },
@@ -53,6 +83,9 @@ const skipTest = [
 test('coordinates for "cubic-bezier(0.5, 0, 0.5, 1)"', () => {
     expect(index_1.default('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(cubicTest);
 });
+test('coordinates for "cubic-bezier(0, 0, 0.5, 2)"', () => {
+    expect(index_1.default('cubic-bezier(0, 0, 0.5, 2)')).toEqual(cubicTest2);
+});
 test('coordinates for "ease"', () => {
     expect(index_1.default('ease')).toEqual(easeTest);
 });
@@ -60,7 +93,7 @@ test('ease shorthand is the same as equivalent cubic-bezier', () => {
     expect(index_1.default('ease-in-out')).toEqual(index_1.default('cubic-bezier(0.42, 0, 0.58, 1)'));
 });
 test('coordinates for "steps(4, skip-end)"', () => {
-    expect(index_1.default('steps(4, skip-end)')).toEqual(skipTest);
+    expect(index_1.default('steps(4, skip-end)')).toEqual(stepTest);
 });
 /*
  * Throwing Errors when giving incorrect input
@@ -80,6 +113,30 @@ test('too many input in steps should throw an error', () => {
 test('incorrect order in steps should throw an error', () => {
     function incorrectInput() {
         index_1.default('steps(skip-end, 4)');
+    }
+    expect(incorrectInput).toThrowError();
+});
+test('too few input in cubic should throw an error', () => {
+    function incorrectInput() {
+        index_1.default('cubic-bezier(0.5, 0, 0.5)');
+    }
+    expect(incorrectInput).toThrowError();
+});
+test('too many input in cubic should throw an error', () => {
+    function incorrectInput() {
+        index_1.default('cubic-bezier(0.5, 0, 0.5, 1, 1)');
+    }
+    expect(incorrectInput).toThrowError();
+});
+test('non number input in cubic should throw an error', () => {
+    function incorrectInput() {
+        index_1.default('cubic-bezier(0.5, hello, 0.5, 1, 1)');
+    }
+    expect(incorrectInput).toThrowError();
+});
+test('non easing function should throw an error', () => {
+    function incorrectInput() {
+        index_1.default('funky(0.5, 0.5, 0.5, 1, 1)');
     }
     expect(incorrectInput).toThrowError();
 });

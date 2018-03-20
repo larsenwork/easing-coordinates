@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const get_cubic_coordinates_1 = require("./lib/get-cubic-coordinates");
+exports.getCubicCoordinates = get_cubic_coordinates_1.default;
 const get_steps_coordinates_1 = require("./lib/get-steps-coordinates");
+exports.getStepsCoordinates = get_steps_coordinates_1.default;
 const easing_map_1 = require("./lib/easing-map");
 const shared = require("./lib/shared");
-function default_1(easingFunction) {
+function getEasingCoordinates(easingFunction) {
     const errorMsgStart = `Error parsing "${easingFunction}".`;
     // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
     if (easing_map_1.default[easingFunction])
@@ -47,4 +49,4 @@ function default_1(easingFunction) {
         throw new Error(`${errorMsgStart} If not a typo then please create a GitHub issue :)`);
     }
 }
-exports.default = default_1;
+exports.default = getEasingCoordinates;

@@ -3,7 +3,7 @@ import getStepsCoordinates from './lib/get-steps-coordinates'
 import easingShorthandMap from './lib/easing-map'
 import * as shared from './lib/shared'
 
-export default function (easingFunction: string): shared.coordinate[] {
+function getEasingCoordinates(easingFunction: string): shared.coordinate[] {
   const errorMsgStart = `Error parsing "${easingFunction}".`
 
   // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
@@ -43,4 +43,10 @@ export default function (easingFunction: string): shared.coordinate[] {
   } else {
     throw new Error(`${errorMsgStart} If not a typo then please create a GitHub issue :)`)
   }
+}
+
+export {
+  getStepsCoordinates,
+  getCubicCoordinates,
+  getEasingCoordinates as default
 }

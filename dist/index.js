@@ -59,3 +59,4 @@ function easingCoordinates(easingFunction, hypotSize, incrementSize) {
   }
 }
 exports.easingCoordinates = easingCoordinates
+exports.default = easingCoordinates

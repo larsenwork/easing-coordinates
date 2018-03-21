@@ -10,7 +10,7 @@
   </a><a href="https://www.npmjs.com/package/easing-coordinates">
     <img alt="monthly downloads" src="https://img.shields.io/npm/dm/easing-coordinates.svg">
   </a><a href="https://github.com/larsenwork/easing-coordinates/blob/master/LICENSE">
-    <img alt="monthly downloads" src="https://img.shields.io/github/license/larsenwork/easing-coordinates.svg">
+    <img alt="MIT License" src="https://img.shields.io/github/license/larsenwork/easing-coordinates.svg">
   </a><a href="https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg">
   </a><a href="https://twitter.com/larsenwork">

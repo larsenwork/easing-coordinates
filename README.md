@@ -79,3 +79,18 @@ function easingCoordinates(easingFunction: string, hypotSize?: number, increment
 function stepsCoordinates(steps: number, skip = 'skip-end'): ICoordinate[]
 function cubicCoordinates(x1: number, y1: number, x2: number, y2: number, hypotSize = 0.1, incrementSize = 0.001): ICoordinate[]
 ```
+
+## Build 
+```bash
+# Checkout and then
+npm install 
+
+# Compile and watch the .ts files
+npm run dev 
+
+# Run test
+npm run test
+```
+
+## PRs, suggestions, etc.
+Are very welcome 🤗

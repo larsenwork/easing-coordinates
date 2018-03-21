@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const shared = require("./shared");
-function stepsCoordinates(steps, skip = 'skip-end') {
+import * as shared from './shared';
+export function stepsCoordinates(steps, skip = 'skip-end') {
     const coordinates = [];
     let n = 0;
     while (n < steps) {
@@ -29,4 +27,3 @@ function stepsCoordinates(steps, skip = 'skip-end') {
     }
     return coordinates;
 }
-exports.stepsCoordinates = stepsCoordinates;

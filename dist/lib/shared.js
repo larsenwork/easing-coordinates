@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const getParenthesisContent = (str) => {
     return str
         .slice(str.indexOf('(') + 1, str.lastIndexOf(')'))
@@ -8,13 +6,13 @@ const getParenthesisContent = (str) => {
         .filter(item => item !== '');
 };
 const convertToNumberMaybe = (str) => Number.isNaN(Number(str)) ? str : Number(str);
-exports.roundToMaxTenDecimals = (num) => Number(`${+num.toFixed(10)}`);
-exports.getCoordinate = (x, y) => {
+export const roundToMaxTenDecimals = (num) => Number(`${+num.toFixed(10)}`);
+export const getCoordinate = (x, y) => {
     return {
-        x: exports.roundToMaxTenDecimals(x),
-        y: exports.roundToMaxTenDecimals(y),
+        x: roundToMaxTenDecimals(x),
+        y: roundToMaxTenDecimals(y),
     };
 };
-exports.getFunctionArguments = (functionAsString) => {
+export const getFunctionArguments = (functionAsString) => {
     return getParenthesisContent(functionAsString).map(arg => convertToNumberMaybe(arg));
 };

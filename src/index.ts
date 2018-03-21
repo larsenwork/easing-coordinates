@@ -57,9 +57,4 @@ function easingCoordinates(
   }
 }
 
-export {
-  stepsCoordinates,
-  cubicCoordinates,
-  easingCoordinates,
-  easingCoordinates as default,
-}
+export { stepsCoordinates, cubicCoordinates, easingCoordinates }

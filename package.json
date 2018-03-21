@@ -1,24 +1,24 @@
 {
   "name": "easing-coordinates",
   "version": "1.0.0",
-  "description": "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
+  "description":
+    "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "test-ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test-ci":
+      "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
     "build": "tsc",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/larsenwork/easing-coordinates.git"
   },
-  "keywords": [
-    "easing-functions",
-    "javascript"
-  ],
+  "keywords": ["easing-functions", "javascript"],
   "author": "Andreas Larsen <andreas@larsenwork.com> (https://larsenwork.com)",
   "license": "MIT",
   "bugs": {
@@ -32,8 +32,10 @@
   "devDependencies": {
     "@types/jest": "^22.2.0",
     "coveralls": "^3.0.0",
+    "husky": "^0.14.3",
     "jest": "^22.4.2",
     "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
     "ts-jest": "^22.4.2",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.10.0",

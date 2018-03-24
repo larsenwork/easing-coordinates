@@ -5,6 +5,8 @@
     <img alt="Travis" src="https://travis-ci.org/larsenwork/easing-coordinates.svg?branch=master">
   </a><a href="https://coveralls.io/github/larsenwork/easing-coordinates?branch=master">
     <img alt="Code coverage" src="https://coveralls.io/repos/github/larsenwork/easing-coordinates/badge.svg?branch=master">
+  </a><a href="https://david-dm.org/larsenwork/easing-coordinates">
+    <img alt="Dependency status" src="https://img.shields.io/david/larsenwork/easing-coordinates.svg">
   </a><a href="https://www.npmjs.com/package/easing-coordinates">
     <img alt="npm version" src="https://img.shields.io/npm/v/easing-coordinates.svg">
   </a><a href="https://www.npmjs.com/package/easing-coordinates">

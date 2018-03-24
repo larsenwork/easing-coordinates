@@ -19,13 +19,16 @@
 </p>
 
 ## Usage
-The easingCoordinates function takes steps and cubic-bezier [single-transition-timing-functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function) as input and returns a set of "low-poly" xy-coordinates.
+
+The easingCoordinates function takes steps and cubic-bezier
+[single-transition-timing-functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function)
+as input and returns a set of "low-poly" xy-coordinates.
 
 ```js
 import { easingCoordinates } from 'easing-coordinates'
 
 easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')
-/* => 
+/* =>
 [
   { x: 0, y: 0 },
   { x: 0.099, y: 0.0143172435 },
@@ -61,36 +64,54 @@ easingCoordinates('steps(4)')
 */
 ```
 
-Use `stepsCoordinates` and `cubicCoordinates` methods directly depending on your data:
+Use `stepsCoordinates` and `cubicCoordinates` methods directly depending on your
+data:
+
 ```js
 import { cubicCoordinates, easingCoordinates, stepsCoordinates } from './index'
 
-easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') == cubicCoordinates(0.42, 0, 0.58, 1)
+easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') ==
+  cubicCoordinates(0.42, 0, 0.58, 1)
 easingCoordinates('steps(4, skip-end)') == stepsCoordinates(4, 'skip-end')
 ```
 
-Increase hypotSize (default = 0.1) to get a "lower-poly" version of your cubic-bezier functions and make sure incrementSize is always smaller than hypotSize.
+Increase hypotSize (default = 0.1) to get a "lower-poly" version of your cubic-bezier
+functions and make sure incrementSize is always smaller than hypotSize.
+
 ```ts
 interface ICoordinate {
   x: number
   y: number
 }
-function easingCoordinates(easingFunction: string, hypotSize?: number, incrementSize?: number): ICoordinate[]
+function easingCoordinates(
+  easingFunction: string,
+  hypotSize?: number,
+  incrementSize?: number
+): ICoordinate[]
 function stepsCoordinates(steps: number, skip = 'skip-end'): ICoordinate[]
-function cubicCoordinates(x1: number, y1: number, x2: number, y2: number, hypotSize = 0.1, incrementSize = 0.001): ICoordinate[]
+function cubicCoordinates(
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+  hypotSize = 0.1,
+  incrementSize = 0.001
+): ICoordinate[]
 ```
 
-## Build 
+## Build
+
 ```bash
 # Checkout and then
-npm install 
+npm install
 
 # Compile and watch the .ts files
-npm run dev 
+npm run watch
 
 # Run test
 npm run test
 ```
 
-## PRs, suggestions, etc.
+## PRs, suggestions, etc
+
 Are very welcome 🤗

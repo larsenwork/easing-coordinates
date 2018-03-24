@@ -6,8 +6,8 @@
     "module":
       "es2015" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
     "rootDir": "./src",
-    "outDir": "./dist" /* Redirect output structure to the directory. */,
-    "sourceMap": false,
+    "outDir": "./dist/es6" /* Redirect output structure to the directory. */,
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
     "strict": true /* Enable all strict type-checking options. */
   }
 }

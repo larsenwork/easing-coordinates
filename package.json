@@ -3,20 +3,24 @@
   "version": "1.0.1",
   "description":
     "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsenwork/easing-coordinates.git"
+  },
+  "files": ["dist"],
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "dist/es6/index.js",
+  "types": "dist/es6/index.d.ts",
   "scripts": {
+    "clean": "rm -rf dist",
+    "es6": "tsc -d --outDir dist/es6",
+    "cjs": "tsc -m commonjs",
+    "build": "npm run clean && npm run es6 && npm run cjs",
     "test": "jest",
     "test-ci":
       "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage",
-    "build": "tsc",
-    "dev": "tsc -w",
     "precommit": "pretty-quick --staged"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/larsenwork/easing-coordinates.git"
   },
   "keywords": ["easing-functions", "javascript"],
   "author": "Andreas Larsen <andreas@larsenwork.com> (https://larsenwork.com)",

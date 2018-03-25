@@ -1,23 +1,22 @@
-<div align="center" markdown="1">
-
 # Easing Coordinates
 
-[![npm version](https://img.shields.io/npm/v/easing-coordinates.svg)](https://www.npmjs.com/package/easing-coordinates)
-[![Travis](https://travis-ci.org/larsenwork/easing-coordinates.svg?branch=master)](https://travis-ci.org/larsenwork/easing-coordinates)
-[![Code coverage](https://coveralls.io/repos/github/larsenwork/easing-coordinates/badge.svg?branch=master)](https://coveralls.io/github/larsenwork/easing-coordinates?branch=master)
-[![Dependency status](https://img.shields.io/david/larsenwork/easing-coordinates.svg)](https://david-dm.org/larsenwork/easing-coordinates)
+[![NPM Version][npm-img]][npm]
+[![NPM Monthly Downloads][dm-img]][npm]
+[![Build Status][ci-img]][ci]
+[![Code Coverage][cvg-img]][cvg]
+[![Dependency status][dpd-img]][dpd]
 <br>
-[![MIT License](https://img.shields.io/github/license/larsenwork/easing-coordinates.svg)](https://github.com/larsenwork/easing-coordinates/blob/master/LICENSE)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Follow Larsenwork on Twitter](https://img.shields.io/twitter/follow/larsenwork.svg?label=follow+larsenwork)](https://twitter.com/larsenwork)
+[![MIT License][mit-img]][mit]
+[![Code Style: Prettier][prt-img]][prt]
+[![Follow Larsenwork on Twitter][twt-img]][twt]
 
-</div>
+<br>
 
 ## Usage
 
 The easingCoordinates function takes steps and cubic-bezier
 [single-transition-timing-functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function)
-as input and returns a set of "low-poly" xy-coordinates.
+as input and returns an array of "low-poly" xy-coordinates.
 
 ```js
 import { easingCoordinates } from 'easing-coordinates'
@@ -94,7 +93,11 @@ function cubicCoordinates(
 ): ICoordinate[]
 ```
 
+<br>
+
 ## Build
+
+(See package.json for more scripts)
 
 ```bash
 # Checkout and then
@@ -107,6 +110,18 @@ npm run watch
 npm run test
 ```
 
-## PRs, suggestions, etc
-
-Are very welcome 🤗
+[npm-img]: https://img.shields.io/npm/v/easing-coordinates.svg?longCache=true&style=flat-square
+[npm]: https://www.npmjs.com/package/easing-coordinates
+[dm-img]: https://img.shields.io/npm/dm/easing-coordinates.svg?longCache=true&style=flat-square
+[ci-img]: https://img.shields.io/travis/larsenwork/easing-coordinates.svg?branch=master&longCache=true&style=flat-square
+[ci]: https://travis-ci.org/larsenwork/easing-coordinates
+[cvg-img]: https://img.shields.io/coveralls/larsenwork/easing-coordinates.svg?longCache=true&style=flat-square
+[cvg]: https://coveralls.io/github/larsenwork/easing-coordinates
+[dpd-img]: https://img.shields.io/david/larsenwork/easing-coordinates.svg?longCache=true&style=flat-square
+[dpd]: https://david-dm.org/larsenwork/easing-coordinates
+[mit-img]: https://img.shields.io/github/license/larsenwork/easing-coordinates.svg?longCache=true&style=flat-square
+[mit]: https://github.com/larsenwork/easing-coordinates/blob/master/LICENSE
+[twt-img]: https://img.shields.io/twitter/follow/larsenwork.svg?label=follow+larsenwork
+[twt]: https://twitter.com/larsenwork
+[prt-img]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?longCache=true&style=flat-square
+[prt]: https://github.com/prettier/prettier

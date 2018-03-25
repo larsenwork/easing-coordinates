@@ -1,6 +1,6 @@
 {
   "name": "easing-coordinates",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description":
     "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
   "repository": {
@@ -19,7 +19,7 @@
     "cjs-watch":
       "tsc --watch --module commonjs --declaration false --outDir dist/cjs",
     "build":
-      "npm run clean && npm run es6-build & npm run cjs-build && npm run precommit",
+      "npm run clean && npm run es6-build & npm run cjs-build; pretty-quick",
     "watch": "npm run es6-watch & npm run cjs-watch",
     "test": "jest",
     "test-ci":

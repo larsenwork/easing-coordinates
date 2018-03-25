@@ -13,13 +13,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
+    "pretty": "pretty-quick",
     "es6-build": "tsc",
     "es6-watch": "tsc --watch",
     "cjs-build": "tsc --module commonjs --declaration false --outDir dist/cjs",
-    "cjs-watch":
-      "tsc --watch --module commonjs --declaration false --outDir dist/cjs",
-    "build":
-      "npm run clean && npm run es6-build & npm run cjs-build; pretty-quick",
+    "cjs-watch": "tsc --watch --module commonjs --declaration false --outDir dist/cjs",
+    "build": "npm run clean && npm run es6-build & npm run cjs-build; npm run pretty",
     "watch": "npm run es6-watch & npm run cjs-watch",
     "test": "jest",
     "test-ci":

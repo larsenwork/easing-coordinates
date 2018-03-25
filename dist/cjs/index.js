@@ -17,9 +17,7 @@ function easingCoordinates(easingFunction, hypotSize, incrementSize) {
     const args = shared.getFunctionArguments(easingFunction)
     const [stepCount, stepSkip] = args
     if (args.length < 1 || args.length > 2) {
-      throw new Error(
-        `${errorMsgStart} Got ${args.length} arguments but expected 1 or 2.`
-      )
+      throw new Error(`${errorMsgStart} Got ${args.length} arguments but expected 1 or 2.`)
     } else {
       if (typeof args[0] !== 'number') {
         throw new Error(`${errorMsgStart} "${args[0]}" is not a number.`)
@@ -33,29 +31,18 @@ function easingCoordinates(easingFunction, hypotSize, incrementSize) {
     const args = shared.getFunctionArguments(easingFunction)
     const [x1, y1, x2, y2] = args
     if (args.length !== 4) {
-      throw new Error(
-        `${errorMsgStart} Got ${args.length} arguments but expected 4.`
-      )
+      throw new Error(`${errorMsgStart} Got ${args.length} arguments but expected 4.`)
     } else {
       args.forEach(arg => {
         if (typeof arg !== 'number') {
           throw new Error(`${errorMsgStart} "${arg}" is not a number.`)
         }
       })
-      return cubic_coordinates_1.cubicCoordinates(
-        x1,
-        y1,
-        x2,
-        y2,
-        hypotSize,
-        incrementSize
-      )
+      return cubic_coordinates_1.cubicCoordinates(x1, y1, x2, y2, hypotSize, incrementSize)
     }
     // If it's not cubic bezier or steps it's not an easing function
   } else {
-    throw new Error(
-      `${errorMsgStart} If not a typo then please create a GitHub issue :)`
-    )
+    throw new Error(`${errorMsgStart} If not a typo then please create a GitHub issue :)`)
   }
 }
 exports.easingCoordinates = easingCoordinates

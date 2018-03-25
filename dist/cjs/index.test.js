@@ -112,14 +112,10 @@ const stepTestBoth = [
  * Test that we correct output when giving valid input
 */
 test('coordinates for "cubic-bezier(0.5, 0, 0.5, 1)"', () => {
-  expect(index_1.easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(
-    cubicTest
-  )
+  expect(index_1.easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(cubicTest)
 })
 test('coordinates for "cubic-bezier(0, 0, 0.5, 2)"', () => {
-  expect(index_1.easingCoordinates('cubic-bezier(0, 0, 0.5, 2)')).toEqual(
-    cubicTest2
-  )
+  expect(index_1.easingCoordinates('cubic-bezier(0, 0, 0.5, 2)')).toEqual(cubicTest2)
 })
 test('coordinates for "ease"', () => {
   expect(index_1.easingCoordinates('ease')).toEqual(easeTest)

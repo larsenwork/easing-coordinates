@@ -5,8 +5,7 @@ const getParenthesisContent = str => {
     .map(item => item.trim())
     .filter(item => item !== '')
 }
-const convertToNumberMaybe = str =>
-  Number.isNaN(Number(str)) ? str : Number(str)
+const convertToNumberMaybe = str => (Number.isNaN(Number(str)) ? str : Number(str))
 export const roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
 export const getCoordinate = (x, y) => {
   return {
@@ -15,7 +14,5 @@ export const getCoordinate = (x, y) => {
   }
 }
 export const getFunctionArguments = functionAsString => {
-  return getParenthesisContent(functionAsString).map(arg =>
-    convertToNumberMaybe(arg)
-  )
+  return getParenthesisContent(functionAsString).map(arg => convertToNumberMaybe(arg))
 }

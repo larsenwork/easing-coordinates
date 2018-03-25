@@ -132,9 +132,7 @@ test('easingCoordinates returns the same as cubicCoordinates', () => {
   )
 })
 test('easingCoordinates returns the same as stepsCoordinates', () => {
-  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
-    stepsCoordinates(4, 'skip-end')
-  )
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(stepsCoordinates(4, 'skip-end'))
 })
 test('coordinates for "steps(4, skip-end)"', () => {
   expect(easingCoordinates('steps(4, skip-end)')).toEqual(stepTestEnd)
@@ -149,12 +147,8 @@ test('coordinates for "steps(4, skip-both)"', () => {
   expect(easingCoordinates('steps(4, skip-both)')).toEqual(stepTestBoth)
 })
 test('old and new steps syntax should yield the same', () => {
-  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
-    easingCoordinates('steps(4, end)')
-  )
-  expect(easingCoordinates('steps(2, skip-start)')).toEqual(
-    easingCoordinates('steps(2, start)')
-  )
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(easingCoordinates('steps(4, end)'))
+  expect(easingCoordinates('steps(2, skip-start)')).toEqual(easingCoordinates('steps(2, start)'))
 })
 /*
  * Throwing Errors when giving incorrect input

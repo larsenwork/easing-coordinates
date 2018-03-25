@@ -2,14 +2,7 @@
 Object.defineProperty(exports, '__esModule', { value: true })
 const BezierEasing = require('bezier-easing')
 const shared = require('./shared')
-function cubicCoordinates(
-  x1,
-  y1,
-  x2,
-  y2,
-  hypotSize = 0.1,
-  incrementSize = 0.001
-) {
+function cubicCoordinates(x1, y1, x2, y2, hypotSize = 0.1, incrementSize = 0.001) {
   const bezier = BezierEasing(x1, y1, x2, y2)
   let x = 0
   let y = 0

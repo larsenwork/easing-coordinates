@@ -60,14 +60,9 @@ Use `stepsCoordinates` and `cubicCoordinates` methods directly depending on your
 data:
 
 ```js
-import {
-  cubicCoordinates,
-  easingCoordinates,
-  stepsCoordinates,
-} from 'easing-coordinates'
+import { cubicCoordinates, easingCoordinates, stepsCoordinates } from 'easing-coordinates'
 
-easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') ===
-  cubicCoordinates(0.42, 0, 0.58, 1)
+easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') === cubicCoordinates(0.42, 0, 0.58, 1)
 easingCoordinates('steps(4, skip-end)') === stepsCoordinates(4, 'skip-end')
 ```
 

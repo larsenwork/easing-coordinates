@@ -62,8 +62,8 @@ data:
 ```js
 import { cubicCoordinates, easingCoordinates, stepsCoordinates } from 'easing-coordinates'
 
-easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') === cubicCoordinates(0.42, 0, 0.58, 1)
-easingCoordinates('steps(4, skip-end)') === stepsCoordinates(4, 'skip-end')
+cubicCoordinates(0.42, 0, 1, 1) === easingCoordinates('cubic-bezier(0.42, 0, 1, 1)')
+stepsCoordinates(4, 'skip-end') === easingCoordinates('steps(4, skip-end)')
 ```
 
 Increase hypotSize (default = 0.1) to get a "lower-poly" version of your cubic-bezier

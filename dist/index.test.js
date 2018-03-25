@@ -1,6 +1,4 @@
-'use strict'
-Object.defineProperty(exports, '__esModule', { value: true })
-const index_1 = require('./index')
+import { cubicCoordinates, easingCoordinates, stepsCoordinates } from './index'
 const cubicTest = [
   { x: 0, y: 0 },
   { x: 0.099, y: 0.0143172435 },
@@ -112,54 +110,50 @@ const stepTestBoth = [
  * Test that we correct output when giving valid input
 */
 test('coordinates for "cubic-bezier(0.5, 0, 0.5, 1)"', () => {
-  expect(index_1.easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(
-    cubicTest
-  )
+  expect(easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')).toEqual(cubicTest)
 })
 test('coordinates for "cubic-bezier(0, 0, 0.5, 2)"', () => {
-  expect(index_1.easingCoordinates('cubic-bezier(0, 0, 0.5, 2)')).toEqual(
-    cubicTest2
-  )
+  expect(easingCoordinates('cubic-bezier(0, 0, 0.5, 2)')).toEqual(cubicTest2)
 })
 test('coordinates for "ease"', () => {
-  expect(index_1.easingCoordinates('ease')).toEqual(easeTest)
+  expect(easingCoordinates('ease')).toEqual(easeTest)
 })
 test('ease shorthand is the same as equivalent cubic-bezier', () => {
-  expect(index_1.easingCoordinates('ease-in-out')).toEqual(
-    index_1.easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')
+  expect(easingCoordinates('ease-in-out')).toEqual(
+    easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')
   )
 })
 test('coordinates for "ease" with a bigger hypotSize shoul be fewer and further appart', () => {
-  expect(index_1.easingCoordinates('ease', 0.2)).toEqual(easeTestHypot)
+  expect(easingCoordinates('ease', 0.2)).toEqual(easeTestHypot)
 })
 test('easingCoordinates returns the same as cubicCoordinates', () => {
-  expect(index_1.easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')).toEqual(
-    index_1.cubicCoordinates(0.42, 0, 0.58, 1)
+  expect(easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')).toEqual(
+    cubicCoordinates(0.42, 0, 0.58, 1)
   )
 })
 test('easingCoordinates returns the same as stepsCoordinates', () => {
-  expect(index_1.easingCoordinates('steps(4, skip-end)')).toEqual(
-    index_1.stepsCoordinates(4, 'skip-end')
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
+    stepsCoordinates(4, 'skip-end')
   )
 })
 test('coordinates for "steps(4, skip-end)"', () => {
-  expect(index_1.easingCoordinates('steps(4, skip-end)')).toEqual(stepTestEnd)
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(stepTestEnd)
 })
 test('coordinates for "steps(4)" - the default is "skip-end" as per spec', () => {
-  expect(index_1.easingCoordinates('steps(4)')).toEqual(stepTestEnd)
+  expect(easingCoordinates('steps(4)')).toEqual(stepTestEnd)
 })
 test('coordinates for "steps(4, skip-none)"', () => {
-  expect(index_1.easingCoordinates('steps(4, skip-none)')).toEqual(stepTestNone)
+  expect(easingCoordinates('steps(4, skip-none)')).toEqual(stepTestNone)
 })
 test('coordinates for "steps(4, skip-both)"', () => {
-  expect(index_1.easingCoordinates('steps(4, skip-both)')).toEqual(stepTestBoth)
+  expect(easingCoordinates('steps(4, skip-both)')).toEqual(stepTestBoth)
 })
 test('old and new steps syntax should yield the same', () => {
-  expect(index_1.easingCoordinates('steps(4, skip-end)')).toEqual(
-    index_1.easingCoordinates('steps(4, end)')
+  expect(easingCoordinates('steps(4, skip-end)')).toEqual(
+    easingCoordinates('steps(4, end)')
   )
-  expect(index_1.easingCoordinates('steps(2, skip-start)')).toEqual(
-    index_1.easingCoordinates('steps(2, start)')
+  expect(easingCoordinates('steps(2, skip-start)')).toEqual(
+    easingCoordinates('steps(2, start)')
   )
 })
 /*
@@ -167,55 +161,55 @@ test('old and new steps syntax should yield the same', () => {
  */
 test('too few input in steps should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('steps()')
+    easingCoordinates('steps()')
   }
   expect(incorrectInput).toThrowError()
 })
 test('too many input in steps should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('steps(4, skip-end, 3)')
+    easingCoordinates('steps(4, skip-end, 3)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('steps without a number first should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('steps(skip-end, 4)')
+    easingCoordinates('steps(skip-end, 4)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('steps without a string last should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('steps(4, 4)')
+    easingCoordinates('steps(4, 4)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('incorrect steps skips instructions should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('steps(4, skip-forward)')
+    easingCoordinates('steps(4, skip-forward)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('too few input in cubic should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('cubic-bezier(0.5, 0, 0.5)')
+    easingCoordinates('cubic-bezier(0.5, 0, 0.5)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('too many input in cubic should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1, 1)')
+    easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1, 1)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('non number input in cubic should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('cubic-bezier(0.5, hello, 0.5, 1)')
+    easingCoordinates('cubic-bezier(0.5, hello, 0.5, 1)')
   }
   expect(incorrectInput).toThrowError()
 })
 test('non easing function should throw an error', () => {
   function incorrectInput() {
-    index_1.easingCoordinates('funky(0.5, 0.5, 0.5, 1, 1)')
+    easingCoordinates('funky(0.5, 0.5, 0.5, 1, 1)')
   }
   expect(incorrectInput).toThrowError()
 })

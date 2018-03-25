@@ -1,8 +1,6 @@
-'use strict'
-Object.defineProperty(exports, '__esModule', { value: true })
-const BezierEasing = require('bezier-easing')
-const shared = require('./shared')
-function cubicCoordinates(
+import * as BezierEasing from 'bezier-easing'
+import * as shared from './shared'
+export function cubicCoordinates(
   x1,
   y1,
   x2,
@@ -47,4 +45,3 @@ function cubicCoordinates(
   }
   return coordinates
 }
-exports.cubicCoordinates = cubicCoordinates

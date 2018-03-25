@@ -1,3 +1,5 @@
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
 const getParenthesisContent = str => {
   return str
     .slice(str.indexOf('(') + 1, str.lastIndexOf(')'))
@@ -7,14 +9,14 @@ const getParenthesisContent = str => {
 }
 const convertToNumberMaybe = str =>
   Number.isNaN(Number(str)) ? str : Number(str)
-export const roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
-export const getCoordinate = (x, y) => {
+exports.roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
+exports.getCoordinate = (x, y) => {
   return {
-    x: roundToMaxTenDecimals(x),
-    y: roundToMaxTenDecimals(y),
+    x: exports.roundToMaxTenDecimals(x),
+    y: exports.roundToMaxTenDecimals(y),
   }
 }
-export const getFunctionArguments = functionAsString => {
+exports.getFunctionArguments = functionAsString => {
   return getParenthesisContent(functionAsString).map(arg =>
     convertToNumberMaybe(arg)
   )

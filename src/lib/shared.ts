@@ -5,16 +5,14 @@ const getParenthesisContent = (str: string) => {
     .map(item => item.trim())
     .filter(item => item !== '')
 }
-const convertToNumberMaybe = (str: string): any =>
-  Number.isNaN(Number(str)) ? str : Number(str)
+const convertToNumberMaybe = (str: string): any => (Number.isNaN(Number(str)) ? str : Number(str))
 
 export interface ICoordinate {
   x: number
   y: number
 }
 
-export const roundToMaxTenDecimals = (num: number): number =>
-  Number(`${+num.toFixed(10)}`)
+export const roundToMaxTenDecimals = (num: number): number => Number(`${+num.toFixed(10)}`)
 
 export const getCoordinate = (x: number, y: number): ICoordinate => {
   return {
@@ -24,7 +22,5 @@ export const getCoordinate = (x: number, y: number): ICoordinate => {
 }
 
 export const getFunctionArguments = (functionAsString: string) => {
-  return getParenthesisContent(functionAsString).map(arg =>
-    convertToNumberMaybe(arg)
-  )
+  return getParenthesisContent(functionAsString).map(arg => convertToNumberMaybe(arg))
 }

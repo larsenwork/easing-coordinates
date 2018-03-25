@@ -1,9 +1,6 @@
 import * as shared from './shared'
 
-export function stepsCoordinates(
-  steps: number,
-  skip = 'skip-end'
-): shared.ICoordinate[] {
+export function stepsCoordinates(steps: number, skip = 'skip-end'): shared.ICoordinate[] {
   const coordinates: shared.ICoordinate[] = []
   let n = 0
   while (n < steps) {

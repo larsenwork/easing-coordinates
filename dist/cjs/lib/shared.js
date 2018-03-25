@@ -7,8 +7,7 @@ const getParenthesisContent = str => {
     .map(item => item.trim())
     .filter(item => item !== '')
 }
-const convertToNumberMaybe = str =>
-  Number.isNaN(Number(str)) ? str : Number(str)
+const convertToNumberMaybe = str => (Number.isNaN(Number(str)) ? str : Number(str))
 exports.roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
 exports.getCoordinate = (x, y) => {
   return {
@@ -17,7 +16,5 @@ exports.getCoordinate = (x, y) => {
   }
 }
 exports.getFunctionArguments = functionAsString => {
-  return getParenthesisContent(functionAsString).map(arg =>
-    convertToNumberMaybe(arg)
-  )
+  return getParenthesisContent(functionAsString).map(arg => convertToNumberMaybe(arg))
 }

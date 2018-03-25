@@ -6,9 +6,4 @@ declare function easingCoordinates(
   hypotSize?: number,
   incrementSize?: number
 ): shared.ICoordinate[]
-export {
-  stepsCoordinates,
-  cubicCoordinates,
-  easingCoordinates,
-  easingCoordinates as default,
-}
+export { stepsCoordinates, cubicCoordinates, easingCoordinates, easingCoordinates as default }

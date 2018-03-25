@@ -1,12 +1,17 @@
+<div align="center" markdown="1">
+
 # Easing Coordinates
 
 [![npm version](https://img.shields.io/npm/v/easing-coordinates.svg)](https://www.npmjs.com/package/easing-coordinates)
 [![Travis](https://travis-ci.org/larsenwork/easing-coordinates.svg?branch=master)](https://travis-ci.org/larsenwork/easing-coordinates)
 [![Code coverage](https://coveralls.io/repos/github/larsenwork/easing-coordinates/badge.svg?branch=master)](https://coveralls.io/github/larsenwork/easing-coordinates?branch=master)
-[![Dependency status](https://img.shields.io/david/larsenwork/easing-coordinates.svg)](https://david-dm.org/larsenwork/easing-coordinates)  
+[![Dependency status](https://img.shields.io/david/larsenwork/easing-coordinates.svg)](https://david-dm.org/larsenwork/easing-coordinates)
+<br>
 [![MIT License](https://img.shields.io/github/license/larsenwork/easing-coordinates.svg)](https://github.com/larsenwork/easing-coordinates/blob/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Follow Larsenwork on Twitter](https://img.shields.io/twitter/follow/larsenwork.svg?label=follow+larsenwork)](https://twitter.com/larsenwork)
+
+</div>
 
 ## Usage
 

@@ -10,13 +10,11 @@
 [![Code Style: Prettier][prt-img]][prt]
 [![Follow Larsenwork on Twitter][twt-img]][twt]
 
-<br>
+Utility to turn steps and cubic-bezier
+[single-transition-timing-functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function)
+into an array of "low-poly" xy-coordinates.
 
 ## Usage
-
-The easingCoordinates function takes steps and cubic-bezier
-[single-transition-timing-functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function)
-as input and returns an array of "low-poly" xy-coordinates.
 
 ```js
 import { easingCoordinates } from 'easing-coordinates'
@@ -62,11 +60,15 @@ Use `stepsCoordinates` and `cubicCoordinates` methods directly depending on your
 data:
 
 ```js
-import { cubicCoordinates, easingCoordinates, stepsCoordinates } from './index'
+import {
+  cubicCoordinates,
+  easingCoordinates,
+  stepsCoordinates,
+} from 'easing-coordinates'
 
-easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') ==
+easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)') ===
   cubicCoordinates(0.42, 0, 0.58, 1)
-easingCoordinates('steps(4, skip-end)') == stepsCoordinates(4, 'skip-end')
+easingCoordinates('steps(4, skip-end)') === stepsCoordinates(4, 'skip-end')
 ```
 
 Increase hypotSize (default = 0.1) to get a "lower-poly" version of your cubic-bezier
@@ -77,12 +79,15 @@ interface ICoordinate {
   x: number
   y: number
 }
+
 function easingCoordinates(
   easingFunction: string,
   hypotSize?: number,
   incrementSize?: number
 ): ICoordinate[]
+
 function stepsCoordinates(steps: number, skip = 'skip-end'): ICoordinate[]
+
 function cubicCoordinates(
   x1: number,
   y1: number,
@@ -121,7 +126,7 @@ npm run test
 [dpd]: https://david-dm.org/larsenwork/easing-coordinates
 [mit-img]: https://img.shields.io/github/license/larsenwork/easing-coordinates.svg?longCache=true&style=flat-square
 [mit]: https://github.com/larsenwork/easing-coordinates/blob/master/LICENSE
-[twt-img]: https://img.shields.io/twitter/follow/larsenwork.svg?label=follow+larsenwork
+[twt-img]: https://img.shields.io/twitter/follow/larsenwork.svg?label=follow+larsenwork&longCache=true&style=flat-square
 [twt]: https://twitter.com/larsenwork
 [prt-img]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?longCache=true&style=flat-square
 [prt]: https://github.com/prettier/prettier

@@ -27,7 +27,7 @@
     "precommit": "pretty-quick --staged"
   },
   "keywords": ["easing-functions", "javascript"],
-  "author": "Andreas Larsen <andreas@larsenwork.com> (https://larsenwork.com)",
+  "author": "larsenwork <andreas@larsenwork.com> (https://larsenwork.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/larsenwork/easing-coordinates/issues"

@@ -8,11 +8,11 @@ const getParenthesisContent = str => {
     .filter(item => item !== '')
 }
 const convertToNumberMaybe = str => (Number.isNaN(Number(str)) ? str : Number(str))
-exports.roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
+const roundToMaxTenDecimals = num => Number(`${+num.toFixed(10)}`)
 exports.getCoordinate = (x, y) => {
   return {
-    x: exports.roundToMaxTenDecimals(x),
-    y: exports.roundToMaxTenDecimals(y),
+    x: roundToMaxTenDecimals(x),
+    y: roundToMaxTenDecimals(y),
   }
 }
 exports.getFunctionArguments = functionAsString => {

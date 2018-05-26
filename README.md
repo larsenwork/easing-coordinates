@@ -23,20 +23,15 @@ easingCoordinates('cubic-bezier(0.5, 0, 0.5, 1)')
 /* =>
 [
   { x: 0, y: 0 },
-  { x: 0.099, y: 0.0143172435 },
-  { x: 0.189, y: 0.0569704145 },
-  { x: 0.265, y: 0.1207430791 },
-  { x: 0.329, y: 0.1976360165 },
-  { x: 0.384, y: 0.281541323 },
-  { x: 0.433, y: 0.3687643431 },
-  { x: 0.479, y: 0.4580875338 },
-  { x: 0.524, y: 0.547869462 },
-  { x: 0.57, y: 0.6368561714 },
-  { x: 0.619, y: 0.7234436574 },
-  { x: 0.674, y: 0.8064697166 },
-  { x: 0.738, y: 0.8823204807 },
-  { x: 0.815, y: 0.9456314885 },
-  { x: 0.906, y: 0.9871537401 },
+  { x: 0.136, y: 0.028 },
+  { x: 0.248, y: 0.104 },
+  { x: 0.342, y: 0.216 },
+  { x: 0.424, y: 0.352 },
+  { x: 0.5, y: 0.5 },
+  { x: 0.576, y: 0.648 },
+  { x: 0.658, y: 0.784 },
+  { x: 0.752, y: 0.896 },
+  { x: 0.864, y: 0.972 },
   { x: 1, y: 1 },
 ]
 */
@@ -66,8 +61,8 @@ cubicCoordinates(0.42, 0, 1, 1) === easingCoordinates('cubic-bezier(0.42, 0, 1, 
 stepsCoordinates(4, 'skip-end') === easingCoordinates('steps(4, skip-end)')
 ```
 
-Increase hypotSize (default = 0.1) to get a "lower-poly" version of your cubic-bezier
-functions and make sure incrementSize is always smaller than hypotSize.
+Increase polySteps (default = 10, min = 2) to get a "higer-poly" version of your cubic-bezier
+functions.
 
 ```ts
 interface ICoordinate {
@@ -75,11 +70,7 @@ interface ICoordinate {
   y: number
 }
 
-function easingCoordinates(
-  easingFunction: string,
-  hypotSize?: number,
-  incrementSize?: number
-): ICoordinate[]
+function easingCoordinates(easingFunction: string, polySteps?: number): ICoordinate[]
 
 function stepsCoordinates(steps: number, skip = 'skip-end'): ICoordinate[]
 
@@ -88,8 +79,7 @@ function cubicCoordinates(
   y1: number,
   x2: number,
   y2: number,
-  hypotSize = 0.1,
-  incrementSize = 0.001
+  polySteps = 10
 ): ICoordinate[]
 ```
 

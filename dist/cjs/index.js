@@ -6,7 +6,7 @@ const easing_map_1 = require('./lib/easing-map')
 const shared = require('./lib/shared')
 const steps_coordinates_1 = require('./lib/steps-coordinates')
 exports.stepsCoordinates = steps_coordinates_1.stepsCoordinates
-function easingCoordinates(easingFunction, hypotSize, incrementSize) {
+function easingCoordinates(easingFunction, steps) {
   const errorMsgStart = `Error parsing "${easingFunction}".`
   // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
   if (easing_map_1.default[easingFunction]) {
@@ -38,7 +38,7 @@ function easingCoordinates(easingFunction, hypotSize, incrementSize) {
           throw new Error(`${errorMsgStart} "${arg}" is not a number.`)
         }
       })
-      return cubic_coordinates_1.cubicCoordinates(x1, y1, x2, y2, hypotSize, incrementSize)
+      return cubic_coordinates_1.cubicCoordinates(x1, y1, x2, y2, steps)
     }
     // If it's not cubic bezier or steps it's not an easing function
   } else {

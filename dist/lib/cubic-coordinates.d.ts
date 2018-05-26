@@ -4,6 +4,5 @@ export declare function cubicCoordinates(
   y1: number,
   x2: number,
   y2: number,
-  hypotSize?: number,
-  incrementSize?: number
+  steps?: number
 ): shared.ICoordinate[]

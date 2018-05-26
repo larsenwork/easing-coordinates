@@ -3,11 +3,7 @@ import easingShorthandMap from './lib/easing-map'
 import * as shared from './lib/shared'
 import { stepsCoordinates } from './lib/steps-coordinates'
 
-function easingCoordinates(
-  easingFunction: string,
-  hypotSize?: number,
-  incrementSize?: number
-): shared.ICoordinate[] {
+function easingCoordinates(easingFunction: string, polySteps?: number): shared.ICoordinate[] {
   const errorMsgStart = `Error parsing "${easingFunction}".`
 
   // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
@@ -42,7 +38,7 @@ function easingCoordinates(
           throw new Error(`${errorMsgStart} "${arg}" is not a number.`)
         }
       })
-      return cubicCoordinates(x1, y1, x2, y2, hypotSize, incrementSize)
+      return cubicCoordinates(x1, y1, x2, y2, polySteps)
     }
 
     // If it's not cubic bezier or steps it's not an easing function

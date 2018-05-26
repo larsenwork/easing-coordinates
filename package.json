@@ -32,20 +32,20 @@
     "url": "https://github.com/larsenwork/easing-coordinates/issues"
   },
   "dependencies": {
-    "@types/bezier-easing": "^2.0.0",
-    "bezier-easing": "^2.0.3"
+    "@types/bezier-js": "0.0.7",
+    "bezier-js": "^2.2.5"
   },
   "homepage": "https://larsenwork.com/easing-gradients/",
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "coveralls": "^3.0.1",
-    "husky": "^1.0.0-rc.6",
-    "jest": "^22.4.4",
+    "husky": "^1.0.0-rc.7",
+    "jest": "^23.0.0",
     "prettier": "^1.12.1",
-    "pretty-quick": "^1.5.0",
+    "pretty-quick": "^1.6.0",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
-    "tslint-config-prettier": "^1.12.0",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.8.3"
   },
   "husky": {

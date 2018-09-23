@@ -1,9 +1,23 @@
 'use strict'
+var __importDefault =
+  (this && this.__importDefault) ||
+  function(mod) {
+    return mod && mod.__esModule ? mod : { default: mod }
+  }
+var __importStar =
+  (this && this.__importStar) ||
+  function(mod) {
+    if (mod && mod.__esModule) return mod
+    var result = {}
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k]
+    result['default'] = mod
+    return result
+  }
 Object.defineProperty(exports, '__esModule', { value: true })
 const cubic_coordinates_1 = require('./lib/cubic-coordinates')
 exports.cubicCoordinates = cubic_coordinates_1.cubicCoordinates
-const easing_map_1 = require('./lib/easing-map')
-const shared = require('./lib/shared')
+const easing_map_1 = __importDefault(require('./lib/easing-map'))
+const shared = __importStar(require('./lib/shared'))
 const steps_coordinates_1 = require('./lib/steps-coordinates')
 exports.stepsCoordinates = steps_coordinates_1.stepsCoordinates
 function easingCoordinates(easingFunction, polySteps) {

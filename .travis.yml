@@ -3,7 +3,7 @@ node_js:
   - stable
 sudo: false
 branches:
-   only:
-   - master
+  only:
+    - master
 script:
   - npm run test-ci

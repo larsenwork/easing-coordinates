@@ -7,7 +7,7 @@ const getParenthesisContent = (str: string) => {
 }
 const convertToNumberMaybe = (str: string): any => (Number.isNaN(Number(str)) ? str : Number(str))
 
-const roundToMaxTenDecimals = (num: number): number => Number(`${+num.toFixed(10)}`)
+const roundToMaxTenDecimals = (num: number): number => +num.toFixed(10)
 
 export interface ICoordinate {
   x: number

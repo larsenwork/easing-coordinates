@@ -93,7 +93,7 @@ test('ease shorthand is the same as equivalent cubic-bezier', () => {
     easingCoordinates('cubic-bezier(0.42, 0, 0.58, 1)')
   )
 })
-test('coordinates for "ease" with 5 steps', () => {
+test('coordinates for "ease" with 5 polySteps', () => {
   expect(easingCoordinates('ease', 5)).toEqual(easeTestFive)
 })
 test('easingCoordinates returns the same as cubicCoordinates', () => {

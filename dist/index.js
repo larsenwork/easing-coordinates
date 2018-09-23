@@ -2,7 +2,7 @@ import { cubicCoordinates } from './lib/cubic-coordinates'
 import easingShorthandMap from './lib/easing-map'
 import * as shared from './lib/shared'
 import { stepsCoordinates } from './lib/steps-coordinates'
-function easingCoordinates(easingFunction, steps) {
+function easingCoordinates(easingFunction, polySteps) {
   const errorMsgStart = `Error parsing "${easingFunction}".`
   // If a shorthand like "ease-in" is provided then convert to equivalent cubic-bezier
   if (easingShorthandMap[easingFunction]) {
@@ -34,7 +34,7 @@ function easingCoordinates(easingFunction, steps) {
           throw new Error(`${errorMsgStart} "${arg}" is not a number.`)
         }
       })
-      return cubicCoordinates(x1, y1, x2, y2, steps)
+      return cubicCoordinates(x1, y1, x2, y2, polySteps)
     }
     // If it's not cubic bezier or steps it's not an easing function
   } else {

@@ -1,6 +1,6 @@
 {
   "name": "easing-coordinates",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Utility script that takes an easing function as input and outputs a coordinate set with adjustable precision/resolution.",
   "repository": {
     "type": "git",
